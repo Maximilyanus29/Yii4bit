@@ -42,6 +42,8 @@ class App
 			$this->action='index';
 			return;
 		}
+
+		$isset_in_routes=true;
 		
 		foreach ($routes as $key => $value) {
 
@@ -49,8 +51,27 @@ class App
 
 				$explode = explode('/', $url);
 
+
+
 				$this->controller=$explode[1];
-				$this->action=$explode[2];
+
+				if (isset($explode[2])) {
+
+					if ($explode[2]==NULL) {
+						$this->action="index";
+					}
+					else{
+						$this->action=$explode[2];
+					}
+
+				}
+				else{
+					$this->action='index';
+				}
+
+
+				
+				
 
 				//удаляю что бы получить параметры запроса
 				unset($explode[0]);
@@ -63,11 +84,13 @@ class App
 
 				}
 
-				
-				
+				break;
+
 
 
 			}
+
+
 		}
 	}
 
@@ -75,29 +98,9 @@ class App
 
 
 
-
-	
-
-	// public function renderErrorAppClass($codeError)
-	// {
-	// 	switch ($codeError) {
-	// 		case 0:
-	// 			echo'не удалось найти контроллер';
-	// 			break;
-			
-	// 		default:
-	// 			echo "Какая то ошибка";
-	// 			break;
-	// 	}
-
-	// 	return;
-	// }
-
-
-
 	public function getController($controllerName)
 	{
-var_dump($this);
+		// var_dump($this);
 		
 		//путь до контроллера
 		$controllerPath='../Controllers/'.$controllerName.'Controller.php';
@@ -114,7 +117,15 @@ var_dump($this);
 					$controller = new $controllerName;
 
 					$controller->beforeAction();
-					$controller->action($this->action,$this->params);
+
+					if ($this->action==NULL) {
+						$controller->action('index',$this->params);
+					}
+					else{
+						$controller->action($this->action,$this->params);
+					}
+
+					
 
 					$controller->afterAction();
 

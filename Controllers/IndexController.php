@@ -4,13 +4,14 @@
  */
 require '../engine/Controller.php';
 
-// use app\engine\Controller;
+use app\engine\Controller;
 
 
 class IndexController//чет не могу наследование подключить
 {
 	public $action;
 	public $params;
+	public $layout='layout';
 	
 
 	public function beforeAction()
@@ -21,29 +22,58 @@ class IndexController//чет не могу наследование подкл�
 
 	public function afterAction()
 	{
-		# code...
+
 	}
 
 
 	public function Action($action,$params)
 	{
-		$this->params=$params
-		$this->$action;
 
+		$func = $action;
+
+		$this->$func($params);
+
+		
 		
 
 	}
 
 	public function index($params)
 	{
-		return 'actionIndex';
+
+
+		return $this->render('main');
 	}
 
 
-	function __construct()
+	public function render($view)
 	{
-		var_dump($this);
+		
+
+		if (file_exists('../view/'.$view.'.php')) {
+			// require_once '../view/'.$view.'.php';
+		}
+
+		$view="../view/".$view.".php";
+
+
+
+		require '../view/'.$this->layout.'.php';
+
+
+
+
+
 	}
+
+
+	public function injectionIntoLayout()
+	{
+		# code...
+	}
+
+
+
 }
 
  ?>
