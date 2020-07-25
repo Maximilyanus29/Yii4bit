@@ -7,19 +7,22 @@ define('DONT_HAVE_MODEL', 1);
 /**
  * 
  */
+
+
+
 class App
 {
-	public $page;
-	public $user;
-	public $method;
-	public $url;
-	public $request=[];
-	public $layout;
-	public $action;
-	public $params=[];
-	public $controller;
+	private $page;
+	private $user;
+	private $method;
+	private $url;
+	private $request=[];
+	private $layout;
+	private $action;
+	private $params=[];
+	private $controller;
 
-	public $homeUrl="/";
+	private $homeUrl="/";
 
 
 
@@ -35,7 +38,7 @@ class App
 
 
 
-	public function handleRequest($url,$routes)
+	private function handleRequest($url,$routes)
 	{
 		if ($url=='/') {
 			$this->controller='index';
@@ -98,7 +101,7 @@ class App
 
 
 
-	public function getController($controllerName)
+	private function getController($controllerName)
 	{
 		// var_dump($this);
 		
