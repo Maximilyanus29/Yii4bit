@@ -26,7 +26,7 @@ class RouterWithGetParams extends Request
 
 
 
-			$controller=explode('/', trim($_GET['route'],'/'))[0];
+			$controllerId=explode('/', trim($_GET['route'],'/'))[0];
 			$action=explode('/', trim($_GET['route'],'/'))[1];
 
 
@@ -36,11 +36,19 @@ class RouterWithGetParams extends Request
 			if (file_exists('../Controllers/indexController.php')) {
 
 				require_once '../Controllers/indexController.php';
+				
+//строка для создания класса из пространства имен контроллеров
+				$namespaceStringCreateObject="app\\Controllers\\".$controllerId."Controller";
 
-				$controller = new \app\Controllers\indexController();
+				$controller = new $namespaceStringCreateObject;
+
+				$controller->activeController=$controllerId;
 
 				if (method_exists($controller, $action)) {
+
+					$controller->activeAction=$action;
 					$controller->$action($_GET);
+
 				}
 				else{
 					echo "не такого действия";
@@ -61,6 +69,10 @@ class RouterWithGetParams extends Request
 				require_once '../Controllers/indexController.php';
 
 				$controller = new \app\Controllers\indexController();
+
+				$controller->activeController='index';
+
+				$controller->activeAction='index';
 
 				$controller->index();
 			}
