@@ -1,12 +1,12 @@
 <?php 
-require_once '../autoloader.php';
+
+
+require '../autoloader.php';
 
 
 
 
-$app = new App();
-$app->run($routes);
+$app=new App\App();
+$app->run();
 
-
-
-?>
+ ?>

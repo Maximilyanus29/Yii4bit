@@ -1,25 +1,24 @@
-<?php
+<?php 
+
 namespace app\engine;
 /**
  * 
  */
-class Controller
+
+
+
+abstract class Controller
 {
+
+
+
+	abstract protected function index();
+
+
 	
-	function __construct()
-	{
-		var_dump($this);
-	}
-
-	public function Run()
-	{
-		
-	}
-
-
-
 }
 
 
 
-?>
+
+ ?>

@@ -1,12 +1,16 @@
 <?php 
-$routes= array(
 
-	
-	'index'=>'IndexController/index',
-	'post'=>'IndexController/index',
-	'het'=>'IndexController/index',
-	'rat'=>'IndexController/index',
+$routeArray=[
+	'/'=>'index/index',
+
+	'/index/<action:\w+>/<controller:\g+>'=>'index/<action>',
+	'/index/<action:\d+>'=>'index/<action>'
+]
 
 
-);
+
+
+
+
  ?>
+
