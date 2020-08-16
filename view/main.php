@@ -7,7 +7,7 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Ceevee - Free Responsive HTML5/CSS3 Template</title>
+	<title>Резюме - максим рябцев</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -40,26 +40,26 @@
 
       <nav id="nav-wrap">
 
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Показать навигацию</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Скрыть навигацию</a>
 
          <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-            <li><a class="smoothscroll" href="#about">About</a></li>
-	         <li><a class="smoothscroll" href="#resume">Resume</a></li>
-            <li><a class="smoothscroll" href="#portfolio">Works</a></li>
+            <li class="current"><a class="smoothscroll" href="#home">Главная</a></li>
+            <li><a class="smoothscroll" href="#about">Обо мне</a></li>
+	         <li><a class="smoothscroll" href="#resume">Резюме</a></li>
+            <li><a class="smoothscroll" href="#portfolio">Работы</a></li>
             <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li>
-            <li><a class="smoothscroll" href="#contact">Contact</a></li>
+            <li><a class="smoothscroll" href="#contact">Контакты</a></li>
          </ul> <!-- end #nav -->
 
       </nav> <!-- end #nav-wrap -->
 
       <div class="row banner">
          <div class="banner-text">
-            <h1 class="responsive-headline">I'm Jonathan Doe.</h1>
-            <h3>I'm a Manila based <span>graphic designer</span>, <span>illustrator</span> and <span>webdesigner</span> creating awesome and
-            effective visual identities for companies of all sizes around the globe. Let's <a class="smoothscroll" href="#about">start scrolling</a>
-            and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
+            <h1 class="responsive-headline">Я Рябцев Максим</h1>
+            <h3 class="responsive-headline">И этот сайт написан на собственном движке на php</h3>
+            <h3>Я мастер в   <span>PHP</span>, <span>JavaScript</span> убежден что можно создать что угодно, вопрос денег и времени <a class="smoothscroll" href="#about">Нажмите сюда</a>
+            и вы узнаете об <a class="smoothscroll" href="#about">мне </a>больше.</h3>
             <hr />
             <ul class="social">
                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
